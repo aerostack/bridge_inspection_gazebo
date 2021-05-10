@@ -1,0 +1,207 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <model name='ground_concrete'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground_concrete/materials/scripts</uri>
+              <uri>model://ground_concrete/materials/textures/</uri>
+              <name>MyGroundPlane/Image</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.004927 0.020491 0 0 -0 0</pose>
+    </model>
+    <light name='sun' type='directional'>
+      <cast_shadows>0</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <plugin name='ros_interface_plugin' filename='librotors_gazebo_ros_interface_plugin.so'/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>47.3667</latitude_deg>
+      <longitude_deg>8.55</longitude_deg>
+      <elevation>500</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <physics name='default_physics' default='0' type='ode'>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>1000</iters>
+          <sor>1.3</sor>
+          <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+      <max_step_size>0.01</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>100</real_time_update_rate>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0 0 0 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>0</shadows>
+      <sky>
+        <clouds/>
+      </sky>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <state world_name='default'>
+      <sim_time>419 180000000</sim_time>
+      <real_time>84 316544626</real_time>
+      <wall_time>1564398926 438353566</wall_time>
+      <iterations>8389</iterations>
+      <model name='ground_concrete'>
+        <pose frame=''>-0.004927 0.020491 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.004927 0.020491 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='suspension_bridge'>
+        <pose frame=''>-2.9868 6.053 -0.220366 0.000105 -1.8e-05 -0.001016</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-2.9868 6.053 -0.220366 0.000105 -1.8e-05 -0.001016</pose>
+          <velocity>0.000338 0.000695 -0.092545 0.010488 -0.001789 -6e-06</velocity>
+          <acceleration>0.002131 0.058475 -9.74152 0.998394 -0.034898 -0.000641</acceleration>
+          <wrench>0.426297 11.6951 -1948.3 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>4 0 15 0 0.916619 0</pose>
+      </light>
+      <light name='user_directional_light_1'>
+        <pose frame=''>4 0 15 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>13.5472 -23.2632 10.4097 0 0.219643 2.06819</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='suspension_bridge'>
+      <static>1</static>
+      <pose frame=''>-3 6 0 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>200</mass>
+          <inertia>
+            <ixx>400.2</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>400.8</iyy>
+            <iyz>0</iyz>
+            <izz>800.6</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://suspension_bridge/meshes/suspension_bridge.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://suspension_bridge/meshes/suspension_bridge.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <light name='user_directional_light_1' type='directional'>
+      <pose frame=''>-3.34267 -3.00126 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+    </light>
+  </world>
+</sdf>
