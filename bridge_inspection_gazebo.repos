@@ -23,6 +23,7 @@ repositories:
     type: git 
     url: https://github.com/aerostack/swarm_interaction
     version: master
+  
 #----------------------------------------------------------------------------
 # Belief updaters
 #----------------------------------------------------------------------------
@@ -34,6 +35,8 @@ repositories:
     type: git 
     url: https://github.com/aerostack/swarm_belief_updater
     version: master
+  
+    
 #----------------------------------------------------------------------------
 # Mission control
 #----------------------------------------------------------------------------
@@ -41,17 +44,11 @@ repositories:
      type: git 
      url: https://github.com/aerostack/python_based_mission_interpreter
      version: master
-  #----------------------------------------------------------------------------
-  # Estos dos deben ir en uno solo que se llame safety management
-  #----------------------------------------------------------------------------
-  mission_control/safety_monitor:
+  mission_control/safety_management:
     type: git 
-    url: https://github.com/aerostack/safety_monitor
+    url: https://github.com/aerostack/safety_management
     version: master
-  mission_control/recovery_manager:
-    type: git 
-    url: https://github.com/aerostack/recovery_manager
-    version: master
+
 #----------------------------------------------------------------------------
 # Executive
 #----------------------------------------------------------------------------
@@ -59,21 +56,10 @@ repositories:
     type: git 
     url: https://github.com/cvar-upm/coordinator_cbc
     version: master
-  #----------------------------------------------------------------------------
-  # Integrar el behavior_execution_viewer con lo anterior (crear un behavior coordination viewer)
-  #----------------------------------------------------------------------------
-  executive/behavior_execution_viewer:
-    type: git 
-    url: https://github.com/aerostack/behavior_execution_viewer
-    version: master    
   executive/belief_manager:
     type: git
     url: https://github.com/aerostack/belief_manager
     version: master
-  #----------------------------------------------------------------------------
-  # Integrar el belief_memory_viewer con lo anterior
-  #----------------------------------------------------------------------------
-
 
 #----------------------------------------------------------------------------
 # Simulation
@@ -82,6 +68,7 @@ repositories:
     type: git 
     url: https://github.com/aerostack/quadrotor_gazebo_simulator
     version: master
+    
 #----------------------------------------------------------------------------
 # Hardware interface
 #----------------------------------------------------------------------------
@@ -89,6 +76,7 @@ repositories:
     type: git 
     url: https://github.com/aerostack/gazebo_interface
     version: master
+  
 #----------------------------------------------------------------------------
 # User interface
 #----------------------------------------------------------------------------
@@ -96,28 +84,18 @@ repositories:
     type: git 
     url: https://github.com/aerostack/alphanumeric_viewer
     version: master
+
 #----------------------------------------------------------------------------
 # Libraries
-#    ¿Quizá se pueden poner grupos de librerias en un sólo repo?
 #----------------------------------------------------------------------------
+  libraries/behaviorlib:
+    type: git 
+    url: https://github.com/cvar-upm/behaviorlib
+    version: master
   libraries/robot_process:
     type: git 
     url: https://github.com/aerostack/robot_process
     version: master
-  #----------------------------------------------------------------------------
-  # Agrupar estos dos en catkin?
-  #----------------------------------------------------------------------------
-  libraries/catkin_simple:
-    type: git
-    url: https://github.com/aerostack/catkin_simple
-    version: master
-  libraries/eigen_catkin:
-    type: git 
-    url: https://github.com/aerostack/eigen_catkin
-    version: master
-  #----------------------------------------------------------------------------
-  # Agrupar estos dos en cvglib?
-  #----------------------------------------------------------------------------
   libraries/lib_cvgekf:
     type: git 
     url: https://github.com/aerostack/lib_cvgekf
@@ -126,17 +104,31 @@ repositories:
     type: git 
     url: https://github.com/aerostack/lib_cvgutils
     version: master
-  #----------------------------------------------------------------------------
-  # Sin agrupar 
-  #----------------------------------------------------------------------------
+  libraries/mav_comm:
+    type: git
+    url: https://github.com/aerostack/mav_comm
+    version: master
   libraries/pugixml:
     type: git 
     url: https://github.com/aerostack/pugixml
     version: master
   libraries/ros_utils_lib:
     type: git 
-    url: https://bitbucket.org/visionaerialrobotics/ros_utils_lib
+    url: https://github.com/aerostack/ros_utils_lib
+    version: master    
+  libraries/catkin_simple:
+    type: git
+    url: https://github.com/aerostack/catkin_simple
     version: master
+  libraries/eigen_catkin:
+    type: git 
+    url: https://github.com/aerostack/eigen_catkin
+    version: master
+
+#----------------------------------------------------------------------------
+# Deprecated
+#----------------------------------------------------------------------------
+
 #----------------------------------------------------------------------------
 # Deprecated libraries
 #----------------------------------------------------------------------------
@@ -148,7 +140,7 @@ repositories:
     type: git 
     url: https://github.com/aerostack/dronemoduleros
     version: master
-
+  
 #----------------------------------------------------------------------------
 # Deprecated messages
 #----------------------------------------------------------------------------
@@ -156,12 +148,5 @@ repositories:
     type: git 
     url: https://github.com/aerostack/dronemsgsros
     version: master
-#----------------------------------------------------------------------------
-# Deprecated libraries
-#----------------------------------------------------------------------------
 
 
-
-#----------------------------------------------------------------------------
-# Borrar?
-#----------------------------------------------------------------------------
