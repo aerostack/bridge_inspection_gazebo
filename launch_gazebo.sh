@@ -17,6 +17,6 @@ ${AEROSTACK_PROJECT}/install_dep.sh
 	source $(rospack find px4)/build/px4_sitl_default/build_gazebo/setup.sh
 	#mv $AEROSTACK_WORKSPACE/devel $AEROSTACK_WORKSPACE/develIgnore
 	#$(sleep 5 ; mv $AEROSTACK_WORKSPACE/develIgnore $AEROSTACK_WORKSPACE/devel) & roslaunch px4 mavros_posix_sitl.launch world:=${AEROSTACK_PROJECT}/configs/gazebo/worlds/AirbusA310Small.world vehicle:=iris sdf:=${AEROSTACK_PROJECT}/configs/gazebo/models/iris_cam/iris_cam.sdf respawn_gazebo:=true
-	roslaunch configs/gazebo/launch/multi_uav_mavros_sitl.launch world:=${AEROSTACK_PROJECT}/configs/gazebo/worlds/suspension_bridge.world vehicle:=iris sdf:=${AEROSTACK_PROJECT}/configs/gazebo/models/iris_cam/iris_cam.sdf respawn_gazebo:=true
+	roslaunch configs/gazebo/launch/multi_uav_mavros_sitl_sdf.launch world:=${AEROSTACK_PROJECT}/configs/gazebo/worlds/suspension_bridge.world vehicle:=iris sdf:=${AEROSTACK_PROJECT}/configs/gazebo/models/iris_cam/iris_cam.sdf respawn_gazebo:=true
 	#roslaunch px4 mavros_posix_sitl.launch world:=${AEROSTACK_PROJECT}/configs/gazebo/worlds/AirbusA310Small.world vehicle:=iris sdf:=${AEROSTACK_PROJECT}/configs/gazebo/models/iris_cam/iris_cam.sdf respawn_gazebo:=true
 	pkill gzserver;pkill gzclient

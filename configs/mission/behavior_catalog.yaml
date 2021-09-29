@@ -98,6 +98,22 @@ behaviors:
 - behavior: SEND_PATH
   package: quadrotor_motion_with_df_control
   task: SEND_PATH
+
+#------------------------------------------------------
+- behavior: PAY_ATTENTION_TO_ROBOT_MESSAGES
+  package: swarm_interaction
+  task: PAY_ATTENTION_TO_ROBOT_MESSAGES
+
+- behavior: INFORM_ROBOTS
+  package: swarm_interaction
+  task: INFORM_ROBOTS
+
+- behavior: INFORM_POSITION_TO_ROBOTS
+  package: swarm_interaction
+  task: INFORM_POSITION_TO_ROBOTS
+  requires:
+  - task: SELF_LOCALIZE
+
 #------------------------------------------------------
 - behavior: TAKE_OFF_WITH_PID
   package: quadrotor_motion_with_pid_control
@@ -207,6 +223,19 @@ tasks:
 
 - task: SEND_PATH
   start_on_request: FALSE
+
+- task: PAY_ATTENTION_TO_ROBOT_MESSAGES
+  execution_goal: keep_running
+
+- task: INFORM_ROBOTS
+  parameters:
+  - parameter: receiver
+    allowed_values: string
+  - parameter: message
+    allowed_values: string
+
+- task: INFORM_POSITION_TO_ROBOTS
+  execution_goal: keep_running
 #------------------------------------------------------
 exclusivity_constraints:
 

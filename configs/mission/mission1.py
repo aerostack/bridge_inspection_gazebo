@@ -22,7 +22,7 @@ def mission():
   mxc.executeTask('FOLLOW_PATH', path=[ [-1, 0, 2.3], [-1, 12, 2.3] ])
   
   print("Informing the other drone...")
-  mxc.executeTask('INFORM_ROBOTS', receiver='drone112', message='first_surface_inspection_completed')
+  mxc.executeTask('INFORM_ROBOTS', receiver='drone2', message='first_surface_inspection_completed')
 
   print("Landing...")
   mxc.executeTask('LAND')
