@@ -14,15 +14,17 @@ def mission():
 
   print("Taking off...")
   mxc.executeTask('TAKE_OFF')
+  
+  print("Rotate...")
+  mxc.executeTask('ROTATE', relative_angle = 180)
 
   print("Following path...")
-  mxc.executeTask('FOLLOW_PATH', path=[ [-5, 0, 2.3], [-5, 12, 2.3] ])
-
+  mxc.executeTask('FOLLOW_PATH', path=[ [-1, 0, 2.3], [-1, 12, 2.3] ])
+  
   print("Informing the other drone...")
-  mxc.executeTask('INFORM_ROBOTS', receiver='drone1', message='second_surface_inspection_completed')
+  mxc.executeTask('INFORM_ROBOTS', receiver='drone2', message='first_surface_inspection_completed')
 
   print("Landing...")
-  result = mxc.executeTask('LAND')
+  mxc.executeTask('LAND')
 
   print('Mission completed.')
-

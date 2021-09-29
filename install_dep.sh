@@ -5,3 +5,4 @@
 sudo apt-get install tmux
 sudo apt upgrade libignition-math2
 sudo apt install xmlstarlet
+sudo apt-get install ros-$ROS_DISTRO-rotors-gazebo-plugins

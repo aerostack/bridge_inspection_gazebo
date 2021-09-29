@@ -215,12 +215,6 @@ tasks:
   start_on_request: FALSE
   execution_goal: keep_running
 
-- task: TAKE_OFF
-
-- task: LAND
-
-- task: FOLLOW_PATH
-
 - task: SEND_PATH
   start_on_request: FALSE
 

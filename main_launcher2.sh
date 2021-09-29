@@ -24,9 +24,7 @@ tmux send-keys "roslaunch pixhawk_interface pixhawk_interface.launch \
 
 tmux new-window -t main_launcher2:3 -n 'Basic Quadrotor Behaviors'
 tmux send-keys "roslaunch basic_quadrotor_behaviors basic_quadrotor_behaviors.launch --wait \
-  namespace:=$NAMESPACE$NUMID_DRONE \
-  raw_pose_topic:=mavros/local_position/pose \
-  raw_speed_topic:=mavros/local_position/velocity_local" C-m
+  namespace:=$NAMESPACE$NUMID_DRONE" C-m
 
 tmux new-window -t main_launcher2:4 -n 'Quadrotor Motion With PID Control'
 tmux send-keys "roslaunch quadrotor_motion_with_pid_control quadrotor_motion_with_pid_control.launch --wait \
@@ -60,5 +58,7 @@ tmux send-keys "roslaunch behavior_coordinator behavior_coordinator.launch --wai
   robot_namespace:=$NAMESPACE$NUMID_DRONE \
   catalog_path:=${APPLICATION_PATH}/configs/mission/behavior_catalog.yaml" C-m
 
-tmux attach-session -t main_launcher2:1
+tmux new-window -t main_launcher2:10 -n 'Camera Raw'
+tmux send-keys "rqt_image_view /iris_1/usb_cam/image_raw" C-m
 
+tmux attach-session -t main_launcher2:1

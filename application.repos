@@ -22,7 +22,7 @@ repositories:
   behaviors/swarm_interaction:
     type: git 
     url: https://github.com/aerostack/swarm_interaction
-    version: master
+    version: v5-libeccio
   
 #----------------------------------------------------------------------------
 # Belief updaters
@@ -30,11 +30,11 @@ repositories:
   belief_updaters/common_belief_updater:
     type: git 
     url: https://github.com/aerostack/common_belief_updater
-    version: master
+    version: v5-libeccio
   belief_updaters/swarm_belief_updater:
     type: git 
     url: https://github.com/aerostack/swarm_belief_updater
-    version: master
+    version: v5-libeccio
   
     
 #----------------------------------------------------------------------------
@@ -47,7 +47,7 @@ repositories:
   mission_control/safety_management:
     type: git 
     url: https://github.com/aerostack/safety_management
-    version: master
+    version: v5-libeccio
 
 #----------------------------------------------------------------------------
 # Executive
