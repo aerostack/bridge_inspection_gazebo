@@ -11,7 +11,7 @@ In order to execute the mission, perform the following steps:
 
 - Wait until the following window is presented:
 
-<img src="https://github.com/aerostack/bridge_inspection_gazebo/blob/master/doc/gazebobridge.png" width=600>
+<img src="https://github.com/aerostack/bridge_inspection_gazebo/blob/v5-libeccio/doc/gazebobridge.png" width=600>
 
 - Execute the script that launches the Aerostack components for this project:
 
